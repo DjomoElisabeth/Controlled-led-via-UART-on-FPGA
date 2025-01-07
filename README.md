@@ -1,11 +1,11 @@
 Ce projet permet de contrôler une LED connectée à une carte FPGA via une interface utilisateur développée en Python avec Tkinter. Il utilise une communication UART pour envoyer et recevoir des commandes entre l'IHM et la carte.
 
- Fonctionnalités
+ # Fonctionnalités
 - Allumer ou éteindre une LED via des commandes UART.
 - Interface utilisateur graphique intuitive développée avec Tkinter.
 - Affichage en temps réel de l'état de la LED (ON, OFF, ou Inconnu).
 
-Plateforme de Test
+# Plateforme de Test
 Ce projet a été testé sur la carte FPGA suivante :
 
 - Carte utilisée : CMOD A7 35T**
@@ -28,20 +28,20 @@ Ce projet peut être adapté pour d'autres cartes FPGA avec un port UART.
  Interface Utilisateur : Thonny
 L'IHM a été développée et testée avec Thonny (éditeur Python).
 
- Installation de Thonny
+ # Installation de Thonny
 1. Téléchargez et installez Thonny depuis : [https://thonny.org](https://thonny.org).
 2. Lancez Thonny et ouvrez le fichier `main.py`.
 3. Exécutez le script pour démarrer l'IHM.
 
- Compatibilité
+ # Compatibilité
  FPGA
 Le projet est conçu pour des cartes FPGA disposant d'un port UART. Des modifications peuvent être nécessaires pour des plateformes différentes.
 
- Python
+ # Python
 - Testé avec Python 3.7.
 - Bibliothèques utilisées : `serial`, `tkinter`.
 
- Fonctionnement
+ # Fonctionnement
 1. Carte FPGA :
    - Recevoir des commandes via UART :
      - `N` : Allumer la LED.
@@ -49,7 +49,7 @@ Le projet est conçu pour des cartes FPGA disposant d'un port UART. Des modifica
      - `S` : Demander l'état de la LED.
    - Répondre à l'IHM avec l'état actuel (ON/OFF).
 
-2. Application Python* :
+2. Application Python :
    - Interface utilisateur développée avec Tkinter.
    - Envoi des commandes et affichage des réponses en temps réel.
 
