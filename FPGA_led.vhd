@@ -2,7 +2,7 @@
 -- Nom du Module : FPGA_LED
 -- Description   : Module top-level combinant réception et émission UART
 --                 pour contrôler une LED.
--- Auteur        : Votre Nom
+-- Auteur        : DJOMO elisabeth
 -- Date          : 07/01/2025
 --
 -- Ports :
