@@ -1,61 +1,34 @@
-Ce projet permet de contrôler une LED connectée à une carte FPGA via une interface utilisateur développée en Python avec Tkinter. Il utilise une communication UART pour envoyer et recevoir des commandes entre l'IHM et la carte.
+# LED Contrôlée via UART sur FPGA
 
- # Fonctionnalités
-- Allumer ou éteindre une LED via des commandes UART.
-- Interface utilisateur graphique intuitive développée avec Tkinter.
-- Affichage en temps réel de l'état de la LED (ON, OFF, ou Inconnu).
+## Description
+Ce projet implémente un système basé sur un FPGA permettant de contrôler une LED à l'aide de commandes UART.
+Les commandes envoyées via une interface série permettent d'allumer/éteindre une LED et de demander son état actuel.
 
-# Plateforme de Test
-Ce projet a été testé sur la carte FPGA suivante :
+## Fonctionnalités
+- **Commandes disponibles :**
+  - `N` : Allumer la LED
+  - `F` : Éteindre la LED
+  - `S` : Demander l'état actuel de la LED (ON ou OFF)
 
-- Carte utilisée : CMOD A7 35T**
-- Fabricant : Digilent
-  - FPGA : Xilinx Artix-7 XC7A35T
-  - Ressources :
-    - [Documentation officielle](https://digilent.com/reference/programmable-logic/cmod-a7/start)
-    - [Guide de l'utilisateur (User Guide)](https://digilent.com/reference/_media/programmable-logic/cmod-a7/cmod_a7_rm.pdf)
+## Matériel Requis
+- FPGA : Digilent Cmod A7 (Artix-7)
+- Horloge à 12 MHz
+- Interface USB-UART (par exemple, un adaptateur FTDI)
 
-Cette carte FPGA compacte, idéale pour les projets nécessitant une communication UART, dispose des caractéristiques suivantes :
-- FPGA Artix-7 avec 33 280 cellules logiques.
-- 44 broches GPIO, compatibles avec les systèmes externes.
-- Port UART pour la communication série.
+## Logiciels Requis
+- Python 3.x
+- IDE Thonny (pour envoyer les commandes via UART)
+- Vivado (ou un autre outil de synthèse FPGA)
 
-Ce projet peut également être adapté pour d'autres cartes FPGA avec un port UART.
+## Instructions
+1. **Configurer le matériel :**
+   - Charger le bitstream sur le FPGA en utilisant Vivado.
+   - Connecter l'adaptateur USB-UART au port série correspondant.
 
+2. **Configurer le logiciel :**
+   - Utiliser le script Python fourni (avec Thonny) pour envoyer des commandes UART.
 
-Ce projet peut être adapté pour d'autres cartes FPGA avec un port UART.
+3. **Tester les fonctionnalités :**
+   - Envoyer les commandes `N`, `F` ou `S` pour observer l'état de la LED.
+   - La LED s'allume/s'éteint selon la commande, et une réponse (`N`, `F`) est envoyée via UART.
 
- Interface Utilisateur : Thonny
-L'IHM a été développée et testée avec Thonny (éditeur Python).
-
- # Installation de Thonny
-1. Téléchargez et installez Thonny depuis : [https://thonny.org](https://thonny.org).
-2. Lancez Thonny et ouvrez le fichier `main.py`.
-3. Exécutez le script pour démarrer l'IHM.
-
- # Compatibilité
- FPGA
-Le projet est conçu pour des cartes FPGA disposant d'un port UART. Des modifications peuvent être nécessaires pour des plateformes différentes.
-
- # Python
-- Testé avec Python 3.7.
-- Bibliothèques utilisées : `serial`, `tkinter`.
-
- # Fonctionnement
-1. Carte FPGA :
-   - Recevoir des commandes via UART :
-     - `N` : Allumer la LED.
-     - `F` : Éteindre la LED.
-     - `S` : Demander l'état de la LED.
-   - Répondre à l'IHM avec l'état actuel (ON/OFF).
-
-2. Application Python :
-   - Interface utilisateur développée avec Tkinter.
-   - Envoi des commandes et affichage des réponses en temps réel.
-
-Diagramme de communication
-
-plaintext
-+-------------+                +----------------+
-|  Python IHM | --(UART)--->  |    FPGA UART    |
-+-------------+                +----------------+
