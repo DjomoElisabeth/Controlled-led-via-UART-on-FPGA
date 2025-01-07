@@ -1,3 +1,24 @@
+------------------------------------------------------------------------
+-- Nom du Module : FPGA_LED
+-- Description   : Module top-level combinant réception et émission UART
+--                 pour contrôler une LED.
+-- Auteur        : Votre Nom
+-- Date          : 07/01/2025
+--
+-- Ports :
+--    - clk_12mhz  (in)  : Horloge principale à 12 MHz
+--    - reset      (in)  : Signal de réinitialisation globale
+--    - rx_serial  (in)  : Entrée série UART (reçoit les commandes)
+--    - led_output (out) : Contrôle de la LED (ON/OFF)
+--    - tx_serial  (out) : Sortie série UART (retourne l'état de la LED)
+--
+-- Génériques :
+--    - CLKS_PER_BIT : Nombre de cycles horloge pour un bit UART
+--                     (exemple : 12 MHz / 9600 bps = 1250)
+------------------------------------------------------------------------
+
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use work.UART_Communication_pkg.all;  -- Mise à jour pour utiliser le nouveau package
